@@ -1,25 +1,18 @@
 # QR Vault
 
-## Development
-
-Install [Commitizen](https://github.com/commitizen/cz-cli) for [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
-
-```bash
-pip install --user -U Commitizen
-
-cz commit
-cz bump
-```
-
 ## Setup
 
-Make sure to install the dependencies:
+```bash
+# ...TODO...
+```
+
+# Development
+
+Install the dependencies:
 
 ```bash
 pnpm install
 ```
-
-## Development Server
 
 Start the development server on `http://localhost:3000`:
 
@@ -39,6 +32,18 @@ Locally preview production build:
 
 ```bash
 pnpm preview
+```
+
+## Conventional commits
+
+Install [Commitizen](https://github.com/commitizen/cz-cli) for [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
+
+```bash
+pip install --user -U Commitizen
+
+# Example
+cz commit
+cz bump
 ```
 
 # Dev-Container
