@@ -18,5 +18,8 @@
     "html",
     "markdown",
     "json"
+  ],
+  "conventionalCommits.scopes": [
+    "ui"
   ]
 }
