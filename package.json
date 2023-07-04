@@ -8,12 +8,17 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
+  "dependencies": {
+    "@unocss/reset": "^0.53.4"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.7",
     "@nuxt/devtools": "latest",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@types/node": "^18",
+    "@unocss/nuxt": "^0.53.4",
     "@vite-pwa/nuxt": "^0.1.0",
-    "nuxt": "^3.6.1"
+    "nuxt": "^3.6.1",
+    "nuxt-icon": "^0.4.2"
   }
 }
