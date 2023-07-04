@@ -1,0 +1,59 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/main/containers/typescript-node
+{
+  "name": "QR Vault Development Environment",
+  "runArgs": [
+    "--name",
+    "${localEnv:USER}_qrvault_devcontainer",
+    "--network=qrvault",
+    "-p=3000:3000",
+    // Define DEVCONTAINER_CPUS on your .bashrc or .zshrc
+    // The devcontainer won't start if you don't set it up.
+    // export DEVCONTAINER_CPUS=4
+    "--cpus=${localEnv:DEVCONTAINER_CPUS}"
+  ],
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "VARIANT": "20-bullseye"
+    }
+  },
+  "containerEnv": {
+    "HOST": "0.0.0.0"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Formatters
+        // "dbaeumer.vscode-eslint",
+        "EditorConfig.EditorConfig",
+
+        // Helpers
+        "eamodio.gitlens",
+        "aaron-bond.better-comments",
+        "Gruntfuggly.todo-tree",
+        "vivaxy.vscode-conventional-commits",
+        "meganrogge.template-string-converter",
+        "formulahendry.auto-rename-tag",
+        "yoavbls.pretty-ts-errors",
+        "ms-azuretools.vscode-docker",
+
+        // Vue and libraries
+        "Vue.volar",
+        "antfu.iconify",
+        "antfu.unocss",
+        
+        // VSCode UI
+        "antfu.theme-vitesse",
+        "file-icons.file-icons",
+        "antfu.icons-carbon"
+      ]
+    }
+  },
+  "remoteUser": "node",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/sshd:1": {}
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredLightColorTheme": "Vitesse Light",
+    "workbench.preferredDarkColorTheme": "Vitesse Dark",
+    "editor.fontFamily": "Input Mono, Menlo, Monaco, 'Courier New', monospace"
+}
