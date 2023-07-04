@@ -1,0 +1,7 @@
+{
+    "extends": "@antfu",
+    "rules": {
+      "vue/prefer-separate-static-class": 0
+    }
+  }
+  
