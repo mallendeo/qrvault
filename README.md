@@ -79,9 +79,14 @@ git config --global user.name "admin"
 
 # Notes
 
-> If you are using the devcontainer and have to rebuild it, backup the ~/.zsh_history `cp ~/.zsh_history ./`
+If you are using the devcontainer and have to rebuild it, backup the ~/.zsh_history `cp ~/.zsh_history ./`
+Then restore it back with `cp .zsh_history ~/.zsh_history && exit`, open a new terminal and your history will be back.
 
-> Killing a node process by port (without bringing down the devcontainer): `./util/kill-node-port.sh 3000`
+---
 
-> Make sure the Volar extension takes over VSCode own TypeScript service:
-> https://vuejs.org/guide/typescript/overview.html#volar-takeover-mode
+Killing a node process by port (without bringing down the devcontainer): `./scripts/kill-node-port.sh 3000`
+
+---
+
+Make sure the Volar extension takes over VSCode own TypeScript service:
+https://vuejs.org/guide/typescript/overview.html#volar-takeover-mode
