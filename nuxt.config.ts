@@ -6,6 +6,11 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@unocss/nuxt',
   ],
+  components: [
+    { path: '~/components/form' },
+    { path: '~/components/misc' },
+    '~/components',
+  ],
   pwa: {
     registerType: 'autoUpdate',
     manifest: {

@@ -84,9 +84,5 @@ Then restore it back with `cp .zsh_history ~/.zsh_history && exit`, open a new t
 
 ---
 
-Killing a node process by port (without bringing down the devcontainer): `./scripts/kill-node-port.sh 3000`
-
----
-
 Make sure the Volar extension takes over VSCode own TypeScript service:
 https://vuejs.org/guide/typescript/overview.html#volar-takeover-mode
