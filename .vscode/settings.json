@@ -20,6 +20,7 @@
     "json"
   ],
   "conventionalCommits.scopes": [
-    "ui"
+    "ui",
+    "crypto"
   ]
 }
