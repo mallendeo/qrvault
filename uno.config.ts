@@ -5,7 +5,9 @@ import {
 } from 'unocss'
 
 export default defineConfig({
-  shortcuts: [],
+  shortcuts: {
+    'flex-center': 'flex justify-center items-center',
+  },
   theme: {
     colors: {},
   },
