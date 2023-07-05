@@ -9,13 +9,16 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@unocss/reset": "^0.53.4"
+    "@unocss/reset": "^0.53.4",
+    "comlink": "^4.4.1",
+    "qrcode": "^1.5.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.7",
     "@nuxt/devtools": "latest",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@types/node": "^18",
+    "@types/qrcode": "^1.5.1",
     "@unocss/nuxt": "^0.53.4",
     "@vite-pwa/nuxt": "^0.1.0",
     "nuxt": "^3.6.1",
