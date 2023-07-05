@@ -2,6 +2,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/eslint-module',
+    '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
     'nuxt-icon',
     '@unocss/nuxt',

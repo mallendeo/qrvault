@@ -16,6 +16,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.7",
     "@nuxt/devtools": "latest",
+    "@nuxtjs/color-mode": "3.2.0",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@types/node": "^18",
     "@types/qrcode": "^1.5.1",
