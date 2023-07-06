@@ -7,6 +7,10 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@unocss/nuxt',
   ],
+  ssr: false,
+  eslint: {
+    lintOnStart: false,
+  },
   components: [
     { path: '~/components/form' },
     { path: '~/components/misc' },
