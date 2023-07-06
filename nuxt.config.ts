@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     'nuxt-icon',
     '@unocss/nuxt',
+    '@vueuse/nuxt',
   ],
   ssr: false,
   eslint: {
