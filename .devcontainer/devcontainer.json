@@ -6,12 +6,17 @@
     "--name",
     "${localEnv:USER}_qrvault_devcontainer",
     "--network=qrvault",
+    // 3000 -> app, 24678 -> vite hmr, 8080 and 4433 -> caddy
+    "-p=8080:8080",
+    "-p=4433:4433",
     "-p=3000:3000",
+    "-p=24678:24678",
     // Define DEVCONTAINER_CPUS on your .bashrc or .zshrc
     // The devcontainer won't start if you don't set it up.
     // export DEVCONTAINER_CPUS=4
     "--cpus=${localEnv:DEVCONTAINER_CPUS}"
   ],
+  "forwardPorts": [3000, 24678],
   "build": {
     "dockerfile": "Dockerfile",
     "args": {

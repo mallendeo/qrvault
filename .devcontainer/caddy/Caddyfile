@@ -1,0 +1,29 @@
+(noverify) {
+	transport http {
+		tls_insecure_skip_verify
+	}
+}
+
+{
+	https_port 4433 # TODO: use 443 (fix docker devcontainer permissions)
+	http_port 8080 # TODO: use 80
+}
+
+{env.CF_DEV_DOMAIN} {
+	@websockets {
+		header Connection Upgrade
+		header Upgrade websocket
+	}
+
+	tls {
+		dns cloudflare {env.CF_API_TOKEN}
+	}
+
+	reverse_proxy @websockets wss://127.0.0.1:24678 {
+		import noverify
+	}
+
+	reverse_proxy https://127.0.0.1:3000 {
+		import noverify
+	}
+}

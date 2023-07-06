@@ -8,6 +8,26 @@
 
 # Development
 
+---
+
+**IMPORTANT:** You need an HTTPS enabled domain for Workers to work on your network (accessing from another device).
+Otherwise **you will get an error** that `Worker` is `undefined`.
+
+You can redirect a domain to your local machine using your hosts file (`/etc/hosts`) and run a proxy like Caddy Nginx with Let's Encrypt.
+
+The devcontainer comes with Caddy on port `4433` and `8080`, and Cloudflare module. You can start it with:
+
+```bash
+touch .env
+cat "CF_API_TOKEN=cloudflare_token" >> .env
+cat "CF_DEV_DOMAIN=example.com" >> .env
+sudo caddy run --envfile .env --config .devcontainer/caddy/Caddyfile
+```
+
+After that you can run the development server using: `HMR_PORT=4433 NODE_TLS_REJECT_UNAUTHORIZED=0 pnpm dev --https`
+
+---
+
 Install the dependencies:
 
 ```bash
@@ -16,6 +36,7 @@ pnpm install
 
 Start the development server on `http://localhost:3000`:
 
+**Local-Only**
 ```bash
 pnpm dev
 ```

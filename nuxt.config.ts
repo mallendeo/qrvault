@@ -12,6 +12,16 @@ export default defineNuxtConfig({
     { path: '~/components/misc' },
     '~/components',
   ],
+  vite: {
+    server: {
+      hmr: process.env.HMR_PORT
+        ? {
+            protocol: 'wss',
+            clientPort: +process.env.HMR_PORT,
+          }
+        : {},
+    },
+  },
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
