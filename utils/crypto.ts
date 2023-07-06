@@ -21,7 +21,7 @@ export async function sha256(str: string) {
 }
 
 function toBase64(arrayBuffer: ArrayBufferLike) {
-  return window.btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)))
+  return btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)))
 }
 
 async function deriveKeyAndIv(password: string,
@@ -75,7 +75,7 @@ export async function encrypt(plainText: string, password: string) {
   )
 
   return {
-    content: arrayBufferToUtf8(encrypted),
+    content: toBase64(encrypted),
     meta: {
       salt: toBase64(salt),
       iv: toBase64(iv),
