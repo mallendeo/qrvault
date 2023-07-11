@@ -24,7 +24,8 @@ cat "CF_DEV_DOMAIN=example.com" >> .env
 sudo caddy run --envfile .env --config .devcontainer/caddy/Caddyfile
 ```
 
-After that you can run the development server using: `HMR_PORT=4433 NODE_TLS_REJECT_UNAUTHORIZED=0 pnpm dev --https`
+After that you can run the development server using: `HMR_PORT=4433 NODE_TLS_REJECT_UNAUTHORIZED=0 pnpm dev --https`, 
+or `pnpm dev:https`.
 
 ---
 
@@ -107,3 +108,19 @@ Then restore it back with `cp .zsh_history ~/.zsh_history && exit`, open a new t
 
 Make sure the Volar extension takes over VSCode own TypeScript service:
 https://vuejs.org/guide/typescript/overview.html#volar-takeover-mode
+
+
+<details>
+  <summary>
+    Forward 4433 to 443 on Linux (iptables).
+  </summary>
+
+  On the **host machine** (not the devcontainer) run:
+
+  ```bash
+  sudo iptables -A PREROUTING -t nat -i enp6s18 -p tcp --dport 80 -j REDIRECT --to-port 8080
+  sudo iptables -A PREROUTING -t nat -i enp6s18 -p tcp --dport 443 -j REDIRECT --to-port 4433
+  ```
+
+  Replace `enp6s18` with your LAN interface.
+</details>
