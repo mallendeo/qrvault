@@ -9,7 +9,7 @@
 	http_port 8080 # TODO: use 80
 }
 
-{env.CF_DEV_DOMAIN} {
+*.qrvau.lt, qrvau.lt {
 	@websockets {
 		header Connection Upgrade
 		header Upgrade websocket
@@ -17,13 +17,22 @@
 
 	tls {
 		dns cloudflare {env.CF_API_TOKEN}
+		resolvers 8.8.8.8
 	}
 
-	reverse_proxy @websockets wss://127.0.0.1:24678 {
-		import noverify
+	@devserver host qrvau.lt
+	handle @devserver {
+		reverse_proxy @websockets wss://127.0.0.1:24678 {
+			import noverify
+		}
+
+		reverse_proxy https://127.0.0.1:3000 {
+			import noverify
+		}
 	}
 
-	reverse_proxy https://127.0.0.1:3000 {
-		import noverify
+	@preview host preview.qrvau.lt
+	handle @preview {
+		reverse_proxy http://127.0.0.1:3000
 	}
 }
